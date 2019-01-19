@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     # Shape a scaling matrix for ST.2084
     ocio_st2084_scale = numpy.identity(4)
-    ocio_st2084_scale /= 100.
+    ocio_st2084_scale /= 80.
     ocio_st2084_scale = ocio_st2084_scale.flatten()
     ocio_st2084_scale[-1] = 1.
     
@@ -61,10 +61,10 @@ if __name__ == "__main__":
 
     config_name = "Krita"
     minimum_exposure = calculate_sr_to_ev(
-        0.001 / 100
+        0.001 / 80
     )
     maximum_exposure = calculate_sr_to_ev(
-        10000. / 100
+        10000. / 80
     )
 
     sr_middle_grey = 0.18
@@ -328,7 +328,7 @@ if __name__ == "__main__":
 
     displays = [
         [
-            "100 nit REC.709 E2.2 Nonlinear", 100, [
+            "80 nit REC.709 E2.2 Nonlinear", 80, [
                 ["2.2 Transfer", "BT.709 E2.2 Nonlinear"],
                 ["Scene Referred Linear", "BT.709 SR Linear"]
             ]

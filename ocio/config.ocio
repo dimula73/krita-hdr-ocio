@@ -16,14 +16,14 @@ roles:
   texture_paint: Krita Log
 
 displays:
-  100 nit REC.709 E2.2 Nonlinear:
-    - !<View> {name: 2.2 Transfer, colorspace: BT.709 E2.2 Nonlinear}
-    - !<View> {name: Scene Referred Linear, colorspace: BT.709 SR Linear}
   10000 nit BT.2020 ST.2084 Nonlinear:
     - !<View> {name: ST.2084 Transfer, colorspace: BT.2020 ST.2084 Nonlinear}
     - !<View> {name: Scene Referred Linear, colorspace: BT.2020 SR Linear}
+  80 nit REC.709 E2.2 Nonlinear:
+    - !<View> {name: 2.2 Transfer, colorspace: BT.709 E2.2 Nonlinear}
+    - !<View> {name: Scene Referred Linear, colorspace: BT.709 SR Linear}
 
-active_displays: [100 nit REC.709 E2.2 Nonlinear]
+active_displays: [80 nit REC.709 E2.2 Nonlinear]
 active_views: [ST.2084 Transfer]
 
 colorspaces:
@@ -36,7 +36,7 @@ colorspaces:
       REC.2020 scene referred linear
     isdata: false
     allocation: lg2
-    allocationvars: [-16.6096, 6.64386]
+    allocationvars: [-16.2877, 6.96578]
 
   - !<ColorSpace>
     name: Non-Colour Data
@@ -60,7 +60,7 @@ colorspaces:
     to_reference: !<GroupTransform>
       children:
         - !<MatrixTransform> {matrix: [0.412391, 0.357584, 0.180481, 0, 0.212639, 0.715169, 0.0721923, 0, 0.0193308, 0.119195, 0.950532, 0, 0, 0, 0, 1]}
-        - !<MatrixTransform> {matrix: [0.636958, 0.144617, 0.168881, 0, 0.2627, 0.677998, 0.0593017, 0, 4.99411e-17, 0.0280727, 1.06099, 0, 0, 0, 0, 1], direction: inverse}
+        - !<MatrixTransform> {matrix: [0.636958, 0.144617, 0.168881, 0, 0.2627, 0.677998, 0.0593017, 0, 4.99411e-017, 0.0280727, 1.06099, 0, 0, 0, 0, 1], direction: inverse}
 
   - !<ColorSpace>
     name: BT.709 E2.2 Nonlinear
@@ -88,7 +88,7 @@ colorspaces:
     to_reference: !<GroupTransform>
       children:
         - !<FileTransform> {src: st2084_to_nits.spi1d, interpolation: linear}
-        - !<MatrixTransform> {matrix: [0.01, 0, 0, 0, 0, 0.01, 0, 0, 0, 0, 0.01, 0, 0, 0, 0, 1]}
+        - !<MatrixTransform> {matrix: [0.0125, 0, 0, 0, 0, 0.0125, 0, 0, 0, 0, 0.0125, 0, 0, 0, 0, 1]}
 
   - !<ColorSpace>
     name: Krita Log
@@ -99,5 +99,5 @@ colorspaces:
       Krita Log
     isdata: false
     allocation: lg2
-    allocationvars: [-16.6096, 6.64386]
-    from_reference: !<AllocationTransform> {allocation: lg2, vars: [-16.6096, 6.64386]}
+    allocationvars: [-16.2877, 6.96578]
+    from_reference: !<AllocationTransform> {allocation: lg2, vars: [-16.2877, 6.96578]}
